@@ -42,31 +42,32 @@ h1 {
   color: #888;
   font-size: 1rem;
 }
-
-/* Add Task Form */
 .add-form {
   padding: 24px 28px;
   display: flex;
   gap: 12px;
   background: #f8f9ff;
   border-bottom: 1px solid #eee;
+  align-items: center;
 }
 
-#todo-input {
-  flex: 1;
+.time-select {
   padding: 16px 20px;
   font-size: 1.05rem;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
+  background: white;
   outline: none;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 110px;
 }
 
-#todo-input:focus {
+.time-select:focus {
   border-color: #667eea;
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
+/* Make sure the Add button matches your original design */
 .add-btn {
   padding: 0 28px;
   background: #667eea;
@@ -77,11 +78,26 @@ h1 {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .add-btn:hover {
   background: #5a6fd6;
   transform: translateY(-2px);
+}
+
+/* Small fix for footer spacing */
+.todo-footer {
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #666;
+  border-top: 1px solid #eee;
+  background: #f8f9ff;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /* Footer */
