@@ -1,0 +1,456 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+header {
+  padding: 32px 28px 20px;
+  text-align: center;
+  background: #f8f9ff;
+  border-bottom: 1px solid #eee;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Add Task Form */
+.add-form {
+  padding: 24px 28px;
+  display: flex;
+  gap: 12px;
+  background: #f8f9ff;
+  border-bottom: 1px solid #eee;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 1.05rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#todo-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.add-btn {
+  padding: 0 28px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #5a6fd6;
+  transform: translateY(-2px);
+}
+
+.tasks-container {
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 18px 28px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  gap: 14px;
+}
+
+.todo-item:hover {
+  background: #f9f9fb;
+}
+
+.todo-item.completed {
+  opacity: 0.75;
+}
+
+.todo-item .checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.todo-item.completed .checkbox {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.todo-item .checkbox::after {
+  content: '✓';
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.todo-item.completed .checkbox::after {
+  opacity: 1;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #ff6b6b;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s;
+  padding: 4px 8px;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Footer */
+.todo-footer {
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #666;
+  border-top: 1px solid #eee;
+  background: #f8f9ff;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  background: #f0f0f5;
+}
+
+.filter-btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  text-decoration: underline;
+}
+
+.tasks-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tasks-container::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+header {
+  padding: 32px 28px 20px;
+  text-align: center;
+  background: #f8f9ff;
+  border-bottom: 1px solid #eee;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Add Task Form */
+.add-form {
+  padding: 24px 28px;
+  display: flex;
+  gap: 12px;
+  background: #f8f9ff;
+  border-bottom: 1px solid #eee;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 1.05rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#todo-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.add-btn {
+  padding: 0 28px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #5a6fd6;
+  transform: translateY(-2px);
+}
+
+/* Tasks List */
+.tasks-container {
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 18px 28px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  gap: 14px;
+}
+
+.todo-item:hover {
+  background: #f9f9fb;
+}
+
+.todo-item.completed {
+  opacity: 0.75;
+}
+
+.todo-item .checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.todo-item.completed .checkbox {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.todo-item .checkbox::after {
+  content: '✓';
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.todo-item.completed .checkbox::after {
+  opacity: 1;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #ff6b6b;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s;
+  padding: 4px 8px;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Footer */
+.todo-footer {
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #666;
+  border-top: 1px solid #eee;
+  background: #f8f9ff;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  background: #f0f0f5;
+}
+
+.filter-btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar styling */
+.tasks-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tasks-container::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 10px;
+}
