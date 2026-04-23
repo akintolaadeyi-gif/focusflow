@@ -206,6 +206,12 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 clearCompletedBtn.addEventListener('click', clearCompleted);
+function playCompletionSound() {
+    // You can replace this URL with any short bell/chime sound
+    const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+    audio.volume = 0.6;
+    audio.play().catch(err => console.log("Sound play blocked:", err));
+}
 
 // Initialize the app
 loadTasks();
