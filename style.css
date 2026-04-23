@@ -59,7 +59,8 @@ h1 {
   background: white;
   outline: none;
   cursor: pointer;
-  min-width: 110px;
+  min-width: 130px;     /* Makes it wider */
+  width: auto;
 }
 
 .time-select:focus {
@@ -67,7 +68,6 @@ h1 {
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
-/* Make sure the Add button matches your original design */
 .add-btn {
   padding: 0 28px;
   background: #667eea;
@@ -79,6 +79,10 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
+}
+.add-form {
+  flex-wrap: wrap;      
+  gap: 10px;
 }
 
 .add-btn:hover {
