@@ -148,3 +148,102 @@ h1 {
 .clear-btn:hover {
   text-decoration: underline;
 }
+/* Task Item Improvements */
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.time-spent {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.timer-display {
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #667eea;
+  min-width: 70px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+/* Timer Button */
+.timer-btn {
+  padding: 8px 16px;
+  background: #4ade80;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.timer-btn:hover {
+  background: #22c55e;
+  transform: translateY(-1px);
+}
+
+.timer-btn.active {
+  background: #ef4444;
+}
+
+.timer-btn.active:hover {
+  background: #dc2626;
+}
+
+/* Checkbox Improvements */
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  background: white;
+}
+
+.todo-item.completed .checkbox {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.checkbox::after {
+  content: '✓';
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.todo-item.completed .checkbox::after {
+  opacity: 1;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #ff6b6b;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
